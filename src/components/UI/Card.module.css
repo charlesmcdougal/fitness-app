@@ -1,0 +1,6 @@
+.card {
+  width: calc(100% - 15px);
+  max-width: 30rem;
+  margin-bottom: 1rem;
+}
+

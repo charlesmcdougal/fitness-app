@@ -1,0 +1,87 @@
+.timer-container {
+  position: relative;
+}
+
+@font-face {
+  font-family: "Period";
+  src: local("Arial");
+  unicode-range: U+002E;
+}
+
+.current-exercise,
+.next-exercise {
+  font-size: clamp(1.8rem, 10vw, 3rem);
+  -webkit-text-stroke: 1.5px black;
+  /* text-shadow: 3px 3px 0 #666, -1px -1px 0 #666, 1px -1px 0 #666,
+    -1px 1px 0 #666, 1px 1px 0 #666; */
+  font-weight: 700;
+  width: 100%;
+  max-width: 40rem;
+  text-align: center;
+}
+
+.exercise-label {
+  margin: 0px;
+  padding: 0.2rem 0.4rem;
+  font-size: 1rem;
+}
+
+.countdown,
+.current-countdown {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-family: "Period", "Share Tech Mono", monospace;
+  font-weight: 700;
+}
+
+.countdown {
+  font-size: clamp(1rem, 8.2vw, 2.5rem);
+  letter-spacing: -0.1rem;
+  transform: translate(0, -18%);
+}
+
+.current-countdown {
+  font-size: clamp(3rem, 20vw, 6rem);
+  letter-spacing: -0.4rem;
+}
+
+g {
+  fill: none;
+  stroke: none;
+}
+
+svg {
+  display: block;
+}
+
+.inner-timer-ring {
+  fill: white;
+  stroke: black;
+  stroke-width: 8px;
+}
+.outer-timer-ring {
+  fill: black;
+  stroke: black;
+  stroke-width: 5px;
+}
+
+.inner-timer-overlay {
+  stroke-width: 8px;
+  stroke-linecap: butt;
+  transform-origin: center;
+  fill-rule: nonzero;
+}
+.outer-timer-overlay {
+  stroke-width: 3px;
+  stroke-linecap: butt;
+  transform-origin: center;
+  fill-rule: nonzero;
+  stroke: black;
+}
+.outer-timer-exercise {
+  stroke-width: 2px;
+  stroke-linecap: butt;
+  transform-origin: center;
+  fill-rule: nonzero;
+}

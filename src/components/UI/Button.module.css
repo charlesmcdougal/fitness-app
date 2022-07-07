@@ -1,0 +1,19 @@
+.button {
+  cursor: pointer;
+  width: 250px;
+  padding: 0.5rem;
+  margin: 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.button:hover {
+  transform: scale(1.14, 1.14);
+  transition: transform 50ms ease-in;
+}
+
+.button:active {
+  transform: scale(1.08, 1.08);
+  transition: transform 0ms ease-in-out;
+}

@@ -1,0 +1,12 @@
+.header {
+  display: block;
+  background-color: var(--main-color);
+  color: var(--highlight-color);
+  font-family: 'Arvo', sans-serif;
+  font-size: clamp(2rem, 10vw, 3rem);
+  font-weight: 700;
+  padding: 1rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  transform: rotate(-3deg);
+}

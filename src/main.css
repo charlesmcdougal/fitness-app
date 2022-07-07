@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=Oswald:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+/* variables for common styling purposes */
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  --main-color: rgb(0, 0, 0);
+  --highlight-color: rgb(255, 255, 255);
+  --accent-color-1: rgb(219, 159, 182);
+  --accent-color-2: rgb(72, 136, 225);
+  --accent-color-3: rgb(69, 221, 130);
+  --accent-color-4: rgb(255, 238, 124);
+  --accent-color-5: rgb(247, 58, 48);
+  --accent-color-rest: rgb(57, 58, 58);
+  --background-color: rgb(236, 236, 236);
+  --border-style: 2px solid black;
+  --box-shadow: 4px 4px 0px black;
+}
+
+/* common classes for applying color */
+.main-color {
+  color: var(--main-color);
+}
+.hl-color {
+  color: var(--highlight-color);
+}
+.accent-1 {
+  color: var(--accent-color-1);
+}
+.accent-2 {
+  color: var(--accent-color-2);
+}
+.accent-3 {
+  color: var(--accent-color-3);
+}
+.accent-4 {
+  color: var(--accent-color-4);
+}
+.accent-5 {
+  color: var(--accent-color-5);
+}
+
+.main-bg-color {
+  background-color: var(--background-color);
+}
+.main-bg-dark {
+  background-color: black;
+}
+.main-bg-light {
+  background-color: white;
+}
+.accent-bg-1 {
+  background-color: var(--accent-color-1);
+}
+.accent-bg-2 {
+  background-color: var(--accent-color-2);
+}
+.accent-bg-3 {
+  background-color: var(--accent-color-3);
+}
+.accent-bg-4 {
+  background-color: var(--accent-color-4);
+}
+.accent-bg-5 {
+  background-color: var(--accent-color-5);
+}
+
+/* common classes for applying borders and drop shadows */
+.default-border {
+  box-shadow: var(--box-shadow);
+  border: var(--border-style);
+}
+
+/* fun styles */
+.polkadot-bg {
+  background-color: var(--background-color);
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.4) 1px,
+    var(--background-color) 1px
+  );
+  background-size: 15px 15px;
+}
+
+.wavy-bg {
+  background-color: var(--background-color);
+  background-image: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.4) 25%,
+      transparent 25%
+    ),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%),
+    linear-gradient(
+      315deg,
+      rgba(255, 255, 255, 0.4) 25%,
+      var(--background-color) 25%
+    );
+  background-position: 15px 0, 15px 0, 0 0, 0 0;
+  background-size: 30px 30px;
+  background-repeat: repeat;
+}
+
+/* display classes */
+.block {
+  display: block;
+}
+.inline {
+  display: inline;
+}
+.flex {
+  display: flex;
+}
+.flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.full-height {
+  height: 100vh;
+}
+
+.minor-rotate-cw {
+  transform: rotate(2deg);
+}
+.minor-rotate-ccw {
+  transform: rotate(-2deg);
+}
+.padding-25 {
+  padding: 0.25rem;
+}
+.padding-5 {
+  padding: 0.5rem;
+}
+.padding-1 {
+  padding: 1rem;
+}
+
+/* styling for the body that can be inherited by components such as buttons */
+body {
+  font-family: "Arvo", sans-serif;
+  font-size: 16px;
+  color: var(--main-color);
+}
+
+/* 'main' is the container for any full-page section of the app */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* default styling for html elements */
+a {
+  text-decoration: none;
+}
+a:active {
+  text-decoration: none;
+}
+a:visited {
+  text-decoration: none;
+}

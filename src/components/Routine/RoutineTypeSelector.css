@@ -1,0 +1,26 @@
+.timer-button {
+  position: relative;
+  height: 4.5rem;
+  background: var(--element-background);
+  padding: 0.5rem;
+  border: 0px;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+}
+
+.timer-button-white {
+  position: relative;
+  background: #ffffff;
+  height: 4.5rem;
+  padding: 0.5rem;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border: 0px;
+  box-shadow: inset 0px 0px 5px rgba(255, 98, 0, 1);
+}
+
+.dual-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

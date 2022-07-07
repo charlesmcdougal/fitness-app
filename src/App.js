@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import { Routes, Route } from "react-router-dom";
+
+// TEMPORARY - TIMER
+import Timer from "./components/Timer/Timer";
+
+// LAYOUT COMPONENTS
+import Loading from "./components/Layout/Loading";
+
+// CSS - main.css contains many pre-defined styles to apply to all components
+import "./main.css";
+
+// ROUTE LOADERS
+// const MainRoute = React.lazy(() => import("./routes/MainRoute"));
+// const ExerciseRoute = React.lazy(() => import("./routes/ExerciseRoute"));
+// const RoutineRoute = React.lazy(() => import("./routes/RoutineRoute"));
+// const TimerRoute = React.lazy(() => import("./routes/TimerRoute"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Timer />
+    // <React.Fragment>
+    //   <Suspense fallback={<Loading />}>
+    //     <Routes>
+    //       <Route path="/" element={<MainRoute />} />
+    //       <Route path="/add-exercise" element={<ExerciseRoute />} />
+    //       <Route path="/create-routine" element={<RoutineRoute />} />
+    //       <Route path="/timer" element={<TimerRoute />} />
+    //     </Routes>
+    //   </Suspense>
+    // </React.Fragment>
   );
 }
 

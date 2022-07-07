@@ -1,0 +1,19 @@
+.label {
+  background-color: var(--main-color);
+  color: var(--highlight-color);
+  padding: 0 0.3rem;
+}
+
+.input {
+  width: 100%;
+  background-color: var(--highlight-color);
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 var(--accent-color-2);
+}
