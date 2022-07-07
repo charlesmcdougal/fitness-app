@@ -16,7 +16,7 @@ const DUMMY_ROUTINE = [
   {
     id: 1,
     name: "Cable-resisted Bicep Curls",
-    duration: 30,
+    duration: 10,
     reps: 0,
     color: 2,
     alerts: [10],
@@ -24,13 +24,13 @@ const DUMMY_ROUTINE = [
   {
     id: 2,
     name: "Rest",
-    duration: 15,
+    duration: 10,
     color: "rest",
   },
   {
     id: 3,
     name: "Squats",
-    duration: 45,
+    duration: 20,
     reps: 0,
     color: 1,
     alerts: [],
@@ -38,13 +38,13 @@ const DUMMY_ROUTINE = [
   {
     id: 4,
     name: "Rest",
-    duration: 30,
+    duration: 10,
     color: "rest",
   },
   {
     id: 5,
     name: "Push-ups",
-    duration: 45,
+    duration: 25,
     reps: 0,
     color: 3,
     alerts: [],
@@ -52,13 +52,13 @@ const DUMMY_ROUTINE = [
   {
     id: 6,
     name: "Rest",
-    duration: 30,
+    duration: 10,
     color: "rest",
   },
   {
     id: 7,
     name: "Pull-Ups",
-    duration: 30,
+    duration: 10,
     reps: 0,
     color: 4,
     alerts: [],
@@ -66,13 +66,13 @@ const DUMMY_ROUTINE = [
   {
     id: 8,
     name: "Rest",
-    duration: 30,
+    duration: 10,
     color: "rest",
   },
   {
     id: 9,
     name: "Plank",
-    duration: 60,
+    duration: 30,
     reps: 0,
     color: 5,
     alerts: [],
@@ -91,6 +91,7 @@ const updateTimerDisplay = (val) => {
 
 let totalTime = 0; //the total time of the routine
 let intervals = []; //the remaining time after each exercise is finished
+let currentExercise = 0;
 
 //loop through the array of exercises and sum each duration to get the total time of the routine
 DUMMY_ROUTINE.forEach((element) => {
@@ -124,7 +125,6 @@ const Timer = (props) => {
   let prevTimestamp = 0; // holds the timestamp from requestAnimationFrame
   let counter = 0; //used to reduce the number of render calls
 
-  let currentExercise = 0;
   let totalExerciseTime = DUMMY_ROUTINE[currentExercise].duration;
   const numOfExercises = DUMMY_ROUTINE.length;
 
@@ -135,15 +135,15 @@ const Timer = (props) => {
   }, []);
 
   const startTimer = () => {
-    let paused = true;
+    let justStarted = true;
     requestAnimationFrame(function animateTimer(timestamp) {
       dt = timestamp - prevTimestamp;
 
       //first time through the dt is equal to the timestamp,
       //which is calculated when the page loads, which we don't want!
-      if (dt > 50 && paused) {
+      if (dt > 50 && justStarted) {
         dt = 0;
-        paused = false;
+        justStarted = false;
       }
 
       //subtracting the change in time (dt) in ms
@@ -184,6 +184,11 @@ const Timer = (props) => {
 
       //timer is going, there is still time left
       if (timerStarted.current && remainingRoutineTime.current > 0) {
+        requestAnimationFrame(animateTimer);
+        prevTimestamp = timestamp;
+        counter++;
+        // console.log(currentExercise);
+        // console.log(remainingExerciseTime.current);
         if (
           remainingExerciseTime.current <= 0 &&
           currentExercise < numOfExercises
@@ -193,9 +198,6 @@ const Timer = (props) => {
           remainingExerciseTime.current = totalExerciseTime;
           setCurrentExerciseState(currentExercise);
         }
-        requestAnimationFrame(animateTimer);
-        prevTimestamp = timestamp;
-        counter++;
       }
       //timer has paused but there is still time left
       else if (!timerStarted.current && remainingRoutineTime.current > 0) {

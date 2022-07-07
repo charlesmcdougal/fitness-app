@@ -1,8 +1,8 @@
-### Fitness App (WIP)
+## Fitness App (WIP)
 
 Thank you for taking a look at my project. This is currently a work in progress, but I hope to have it working by the end of the summer.
 
-#### About
+### About
 
 This will be a full-featured fitness routine app built in React. It’s a work-in-progress – the first part that I’ve built is the actual timer, figuring that would be the most challenging.
 

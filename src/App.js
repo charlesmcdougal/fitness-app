@@ -1,11 +1,10 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
-// TEMPORARY - TIMER
-import Timer from "./components/Timer/Timer";
-
 // LAYOUT COMPONENTS
 import Loading from "./components/Layout/Loading";
+
+import Timer from "./components/Timer/Timer";
 
 // CSS - main.css contains many pre-defined styles to apply to all components
 import "./main.css";
